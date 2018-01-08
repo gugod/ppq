@@ -8,12 +8,6 @@ Run the query against the perl source files under current working directory.
 
    ppq ${query}
 
-Run the query against the perl source files under current working directory.
-
-   ppq ${query} ${dir}
-   ppq ${query} ${file1} ${file2} ${file3} ...
-
-
 ## Query by example
 
 The query language of `ppq` is also perl, but the syntatical elements has different meaning the
@@ -45,6 +39,16 @@ recalls differently.
     foo() && $bar || @bar
     foo() && bar() + 42
     foo() && bar() || baz()
+
+## Recall all uses of certain hash key, given the variable name
+
+    ppq '$h{foo}'
+    ppq '$h->{foo}'
+
+## Recall all uses of certain hash key
+
+    ppq '...->{foo}'
+    ppq '...{foo}'
 
 ## Queries to recall subroutine definitions
 
