@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+use v5.18;
+use strict;
+use warnings;
+
+package App::ppq {
+    sub new {
+        my ($class, @args) = @_;
+        return bless {
+            args => \@args,
+        } => __PACKAGE__;
+    }
+
+    sub run {
+        my ($self) = @_;
+    }
+};
+
+App::ppq->new(@ARGV)->run;
